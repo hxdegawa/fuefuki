@@ -11,7 +11,13 @@ export default {
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
       { hid: 'description', name: 'description', content: '' },
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' },
+      {
+        rel: 'stylesheet',
+        href: 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&display=swap',
+      },
+    ],
   },
 
   // Global CSS (https://go.nuxtjs.dev/config-css)
@@ -35,9 +41,13 @@ export default {
 
   styleResources: {
     scss: [
-      '~/assets/scss/_variables.scss',
+      '~/assets/scss/_palette.scss',
+      '~/assets/scss/_browser.scss',
+      '~/assets/scss/_variable.scss',
       '~/assets/scss/_global.scss',
       '~/assets/scss/_rich-text.scss',
+      '~/assets/scss/_mixin.scss',
+      '~/assets/scss/_transition.scss',
     ],
   },
 
@@ -45,6 +55,7 @@ export default {
   modules: [
     // https://go.nuxtjs.dev/axios
     '@nuxtjs/axios',
+    'nuxt-lazy-load',
     // https://go.nuxtjs.dev/pwa
     // '@nuxtjs/pwa',
   ],

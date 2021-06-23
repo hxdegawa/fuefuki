@@ -1,12 +1,18 @@
 <template lang="pug">
   .container
+    fuepara-header
     nuxt
 </template>
 
 <script lang="ts">
 import { Vue, Component } from 'nuxt-property-decorator'
+import FueparaHeader from '~/components/Header.vue'
 
-@Component({})
+@Component({
+  components: {
+    FueparaHeader,
+  },
+})
 export default class DefaultLayout extends Vue {
   mounted() {
     let vh: number = window.innerHeight * 0.01
@@ -22,7 +28,8 @@ export default class DefaultLayout extends Vue {
 <style lang="scss">
 .container {
   min-height: calc(var(--vh, 1vh) * 100);
-  padding: 50px;
+  padding: 130px 50px;
+  overflow-x: hidden;
 
   @media screen and (max-width: $width-tablet-small) {
     padding: 30px;
