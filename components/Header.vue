@@ -4,8 +4,8 @@
       nuxt-link(to="/"): img(src='~/assets/images/fuepara.svg')
 
       ul
-        li: nuxt-link(to="") ディスコグラフィー
-        li: nuxt-link(to="") スケジュール
+        li: nuxt-link(to="/discography") ディスコグラフィー
+        li: nuxt-link(to="/schedule") スケジュール
         li: nuxt-link(to="/story") ストーリー
       
 </template>
@@ -35,6 +35,10 @@ export default class FueparaHeader extends Vue {}
     justify-content: space-between;
     align-items: center;
 
+    @media screen and (max-width: $width-pc-small) {
+      padding: 0 20px;
+    }
+
     img {
       object-fit: contain;
       height: 60px;
@@ -54,6 +58,13 @@ export default class FueparaHeader extends Vue {}
           font-size: 0.8rem;
           font-weight: $weight-bold;
           color: $color-text-primary;
+        }
+
+        // TODO: make hamburger
+        @media screen and (max-width: $width-tablet-large) {
+          &:nth-child(3) {
+            display: none;
+          }
         }
 
         &:not(:last-child) {

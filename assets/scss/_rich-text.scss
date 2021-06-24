@@ -18,9 +18,21 @@
   h1,
   h2,
   h3 {
-    font-size: 1em;
     margin: 60px 0 30px 0;
-    color: $color-tertiary;
+    color: $color-text-secondary;
+    font-weight: $weight-bold;
+  }
+
+  h1 {
+    font-size: 1.4rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
+  }
+
+  h3 {
+    font-size: 1.2rem;
   }
 
   a {

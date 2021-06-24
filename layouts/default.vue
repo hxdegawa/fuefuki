@@ -28,11 +28,11 @@ export default class DefaultLayout extends Vue {
 <style lang="scss">
 .container {
   min-height: calc(var(--vh, 1vh) * 100);
-  padding: 130px 50px;
+  padding: 80px 0 0;
   overflow-x: hidden;
 
   @media screen and (max-width: $width-tablet-small) {
-    padding: 30px;
+    padding: 130px 30px 30px 30px;
   }
 }
 </style>

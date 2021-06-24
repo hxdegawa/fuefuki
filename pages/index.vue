@@ -27,9 +27,16 @@
             img.top__main__introduce__contents__image(data-src="~/assets/images/photos/duo3.jpg" v-lazy-load)
             img.top__main__introduce__contents__image(data-src="~/assets/images/photos/duo4.jpg" v-lazy-load)
             img.top__main__introduce__contents__image(data-src="~/assets/images/photos/duo5.jpg" v-lazy-load)
+          
+          
           .top__main__introduce__box
+            .illust-section
+              img.illust-1(src="~/assets/images/illust/illust1.png")
             h2.top__main__introduce__subtitle {{ duo.subtitle }}
             .top__main__introduce__contents__body.rich-text(v-html="duo.body.html")
+
+        .illust-section
+          img.illust-2(src="~/assets/images/illust/illust2.png")
 
         .top__main__introduce__contents__introductions
           .top__main__introduce__contents.haru
@@ -111,6 +118,7 @@ export default class IndexPage extends Vue {
     align-items: center;
     min-height: calc(var(--vh, 1vh) * 50 - 30px);
     padding: 30px;
+    margin: 0 30px;
     animation: bg-move 3s linear infinite;
     background-image: url('~assets/images/bg.svg');
     background-repeat: repeat;
@@ -119,6 +127,7 @@ export default class IndexPage extends Vue {
 
     @media screen and (max-width: $width-tablet-small) {
       min-height: calc(var(--vh, 1vh) * 100 - 60px);
+      margin: 0 10px;
     }
 
     @keyframes bg-move {
@@ -204,7 +213,7 @@ export default class IndexPage extends Vue {
 
       &__box {
         position: relative;
-        padding: 100px 0;
+        padding: 150px 0;
         margin: 50px 0;
 
         & > h2 {
@@ -230,7 +239,7 @@ export default class IndexPage extends Vue {
           content: '';
           position: absolute;
           z-index: 1;
-          background-color: yellow;
+          background-color: rgb(255, 204, 108);
           top: 5%;
           left: 50%;
           width: 140vw;
@@ -391,6 +400,31 @@ export default class IndexPage extends Vue {
         border-color: transparent transparent $color-dark-bg-primary transparent;
       }
     }
+  }
+}
+
+.illust-section {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 0;
+
+  .illust-1 {
+    position: absolute;
+    object-fit: contain;
+    left: 5vw;
+    bottom: 0;
+    z-index: 8;
+    max-height: 28vh;
+  }
+
+  .illust-2 {
+    position: absolute;
+    object-fit: contain;
+    right: 5vw;
+    bottom: 0;
+    z-index: 8;
+    max-height: 33vh;
   }
 }
 </style>
